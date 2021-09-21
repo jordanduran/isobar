@@ -1,8 +1,23 @@
+import Navbar from './components/Navbar';
+import States from './components/States';
+import Guess from './components/Guess';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 const App = () => {
   return (
-    <div className='App'>
-      <h1>App</h1>
-    </div>
+    <Router>
+      <div className='App'>
+        <Navbar />
+        <Switch>
+          <Route path='/states'>
+            <States />
+          </Route>
+          <Route path='/guess'>
+            <Guess />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 };
 
