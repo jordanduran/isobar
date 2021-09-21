@@ -31,11 +31,9 @@ const GuessForm = (props) => {
         onChange={handleChange}
         disabled={props.userGuessedCorrect}
       />
-      {!props.userGuessedCorrect && (
-        <button className='guess-btn'>Submit</button>
-      )}
+      {!props.userGuessedCorrect && <button className='btn'>Submit</button>}
       {props.userGuessedCorrect && (
-        <button onClick={handleResetGame} className='guess-btn'>
+        <button onClick={handleResetGame} className='btn'>
           Play Again
         </button>
       )}
