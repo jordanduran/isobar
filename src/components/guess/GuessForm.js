@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { connect, useDispatch } from 'react-redux';
 
-const GuessForm = () => {
+const GuessForm = (props) => {
   const [num, setNum] = useState('');
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setNum(e.target.value);
@@ -9,7 +11,9 @@ const GuessForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(num);
+    dispatch({ type: 'USER_GUESSES', payload: 1 });
+    props.onHandleDetermineResult(Number(num));
+    setNum('');
   };
 
   return (
@@ -21,9 +25,20 @@ const GuessForm = () => {
         placeholder='0'
         className='guess-input'
         onChange={handleChange}
+        disabled={props.userGuessedCorrect}
       />
+      <button className='guess-btn' disabled={props.userGuessedCorrect}>
+        Submit
+      </button>
     </form>
   );
 };
 
-export default GuessForm;
+const mapStateToProps = (state) => {
+  return {
+    userGuesses: state.userGuesses,
+    userGuessedCorrect: state.userGuessedCorrect,
+  };
+};
+
+export default connect(mapStateToProps)(GuessForm);
