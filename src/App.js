@@ -1,6 +1,6 @@
 import Navbar from './components/Navbar';
 import States from './components/States';
-import Guess from './components/Guess';
+import Guess from './components/guess/Guess';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const App = () => {

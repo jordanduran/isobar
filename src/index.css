@@ -50,3 +50,27 @@ body {
 .navbar-links li:hover {
   background-color: rgb(211, 96, 54);
 }
+
+/* Guess Component Styles */
+
+.guess-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+.guess-title {
+  color: black;
+}
+
+.guess-form {
+  text-align: center;
+}
+
+.guess-input {
+  width: 50px;
+  height: 30px;
+  text-align: center;
+}
