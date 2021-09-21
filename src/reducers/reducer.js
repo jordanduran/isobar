@@ -1,5 +1,8 @@
 const initState = {
   randomNumber: 0,
+  userGuessedNumber: null,
+  userGuesses: 0,
+  userGuessedCorrect: false,
 };
 
 const reducer = (state = initState, action) => {
@@ -7,7 +10,22 @@ const reducer = (state = initState, action) => {
     case 'NEW_RANDOM_NUMBER':
       return {
         ...state,
-        randomNumber: action.number,
+        randomNumber: action.payload,
+      };
+    case 'USER_GUESSED_NUMBER':
+      return {
+        ...state,
+        userGuessedNumber: action.payload,
+      };
+    case 'USER_GUESSES':
+      return {
+        ...state,
+        userGuesses: state.userGuesses + action.payload,
+      };
+    case 'USER_GUESSED_CORRECT':
+      return {
+        ...state,
+        userGuessedCorrect: action.payload,
       };
     default:
       return state;
