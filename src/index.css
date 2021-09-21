@@ -10,6 +10,11 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+
 /* Navbar Styles */
 
 .navbar {
@@ -83,7 +88,7 @@ body {
   text-align: center;
 }
 
-.guess-btn {
+.btn {
   cursor: pointer;
   border-radius: 4px;
   background: rgb(255, 148, 109);
@@ -95,11 +100,81 @@ body {
   margin-bottom: 1em;
 }
 
-.guess-btn:hover {
+.btn:hover {
   background-color: rgb(255, 119, 70);
 }
 
 .secret-number {
   margin-top: 1em;
   font-size: 18px;
+}
+
+/* States Component Styles */
+
+.states-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.state-list-item {
+  list-style: none;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid rgb(255, 149, 111);
+  margin: 1.5em 0;
+  font-size: 25px;
+}
+
+.state-list-item:hover {
+  background-color: rgb(255, 148, 109);
+  transition: 0.3s ease;
+}
+
+/* StateDetail Component Styles */
+
+.detail-header {
+  text-align: center;
+}
+
+.detail-list {
+  overflow-x: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+table {
+  margin: 0 auto;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 0.5em 1em;
+}
+
+tr {
+  text-align: center;
+  padding: 1em;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5em;
+  height: 400px;
+}
+
+.state.flag-img {
+  width: 100px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
 }
