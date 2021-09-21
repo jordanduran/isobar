@@ -3,6 +3,8 @@ const initState = {
   userGuessedNumber: null,
   userGuesses: 0,
   userGuessedCorrect: false,
+  states: [],
+  selectedState: [],
 };
 
 const reducer = (state = initState, action) => {
@@ -29,10 +31,21 @@ const reducer = (state = initState, action) => {
       };
     case 'RESET_GAME':
       return {
+        ...state,
         randomNumber: Math.floor(Math.random() * 100 + 1),
         userGuessedNumber: null,
         userGuesses: 0,
         userGuessedCorrect: false,
+      };
+    case 'LOAD_STATES':
+      return {
+        ...state,
+        states: action.payload,
+      };
+    case 'SELECTED_STATE':
+      return {
+        ...state,
+        selectedState: action.payload,
       };
     default:
       return state;
