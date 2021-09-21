@@ -4,7 +4,7 @@ import GuessForm from './GuessForm';
 
 const Guess = (props) => {
   const dispatch = useDispatch();
-  
+
   const generateRandomNumber = () => {
     return Math.floor(Math.random() * 100 + 1);
   };
