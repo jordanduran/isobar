@@ -4,7 +4,6 @@ import GuessForm from './GuessForm';
 
 const Guess = (props) => {
   const dispatch = useDispatch();
-  console.log(props);
 
   const generateRandomNumber = () => {
     return Math.floor(Math.random() * 100 + 1);
@@ -39,6 +38,10 @@ const Guess = (props) => {
             props.randomNumber > props.userGuessedNumber
           ? 'Sorry, your guess was too low!'
           : null}
+      </p>
+      <p className='secret-number'>
+        {props.userGuessedCorrect &&
+          `The secret number was ${props.randomNumber}`}
       </p>
     </div>
   );

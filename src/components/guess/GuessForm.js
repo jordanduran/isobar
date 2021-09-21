@@ -16,6 +16,10 @@ const GuessForm = (props) => {
     setNum('');
   };
 
+  const handleResetGame = () => {
+    dispatch({ type: 'RESET_GAME' });
+  };
+
   return (
     <form className='guess-form' onSubmit={handleSubmit}>
       <input
@@ -27,9 +31,14 @@ const GuessForm = (props) => {
         onChange={handleChange}
         disabled={props.userGuessedCorrect}
       />
-      <button className='guess-btn' disabled={props.userGuessedCorrect}>
-        Submit
-      </button>
+      {!props.userGuessedCorrect && (
+        <button className='guess-btn'>Submit</button>
+      )}
+      {props.userGuessedCorrect && (
+        <button onClick={handleResetGame} className='guess-btn'>
+          Play Again
+        </button>
+      )}
     </form>
   );
 };

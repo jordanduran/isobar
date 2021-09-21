@@ -27,6 +27,13 @@ const reducer = (state = initState, action) => {
         ...state,
         userGuessedCorrect: action.payload,
       };
+    case 'RESET_GAME':
+      return {
+        randomNumber: Math.floor(Math.random() * 100 + 1),
+        userGuessedNumber: null,
+        userGuesses: 0,
+        userGuessedCorrect: false,
+      };
     default:
       return state;
   }
