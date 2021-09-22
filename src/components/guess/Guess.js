@@ -57,7 +57,7 @@ const Guess = (props) => {
       </p>
       <p className='secret-number'>
         {props.userGuessedCorrect &&
-          `The secret number was ${props.randomNumber}`}
+          `The secret number was ${props.userGuessedNumber}`}
       </p>
       <p className='guess-error'>
         {props.guessError && `Please enter a number 1 - 100`}
