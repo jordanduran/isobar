@@ -28,7 +28,7 @@ const Guess = (props) => {
     }
   };
 
-  // Dispatches a new random number on component mount or when if dispatched
+  // Dispatches a new random number on component mount or when dispatched
 
   useEffect(() => {
     dispatch({ type: 'NEW_RANDOM_NUMBER', payload: generateRandomNumber() });
