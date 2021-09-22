@@ -135,6 +135,7 @@ body {
 
 .detail-header {
   text-align: center;
+  text-transform: capitalize;
 }
 
 .detail-list {
