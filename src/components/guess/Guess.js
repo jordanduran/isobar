@@ -5,6 +5,8 @@ import GuessForm from './GuessForm';
 const Guess = (props) => {
   const dispatch = useDispatch();
 
+  console.log(props.guessError);
+
   const generateRandomNumber = () => {
     return Math.floor(Math.random() * 100 + 1);
   };
@@ -14,12 +16,28 @@ const Guess = (props) => {
 
     if (props.randomNumber === guessedNumber) {
       dispatch({ type: 'USER_GUESSED_CORRECT', payload: true });
+    } else if (guessedNumber > 100 || guessedNumber < 0) {
+      dispatch({ type: 'GUESS_ERROR', payload: true });
+      const timer = setTimeout(() => {
+        dispatch({ type: 'GUESS_ERROR', payload: false });
+      }, 5000);
+      return () => {
+        clearTimeout(timer);
+      };
     }
   };
 
   useEffect(() => {
     dispatch({ type: 'NEW_RANDOM_NUMBER', payload: generateRandomNumber() });
   }, [dispatch]);
+
+  // useEffect(() => {
+  //   if (props.guessError) {
+  //     setTimeout(() => {
+
+  //     }, 5000)
+  //   }
+  // }, [dispatch, props.guessError])
 
   return (
     <div className='guess-container'>
@@ -43,6 +61,9 @@ const Guess = (props) => {
         {props.userGuessedCorrect &&
           `The secret number was ${props.randomNumber}`}
       </p>
+      <p className='guess-error'>
+        {props.guessError && `Please enter a number 1 - 100`}
+      </p>
     </div>
   );
 };
@@ -53,6 +74,7 @@ const mapStateToProps = (state) => {
     userGuessedNumber: state.userGuessedNumber,
     userGuesses: state.userGuesses,
     userGuessedCorrect: state.userGuessedCorrect,
+    guessError: state.guessError,
   };
 };
 

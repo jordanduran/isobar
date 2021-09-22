@@ -109,6 +109,11 @@ body {
   font-size: 18px;
 }
 
+.guess-error {
+  color: red;
+  margin: 0;
+}
+
 /* States Component Styles */
 
 .states-container {
