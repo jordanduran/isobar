@@ -29,14 +29,6 @@ const Guess = (props) => {
     dispatch({ type: 'NEW_RANDOM_NUMBER', payload: generateRandomNumber() });
   }, [dispatch]);
 
-  // useEffect(() => {
-  //   if (props.guessError) {
-  //     setTimeout(() => {
-
-  //     }, 5000)
-  //   }
-  // }, [dispatch, props.guessError])
-
   return (
     <div className='guess-container'>
       <h1 className='guess-title'>Guess the secret number from 1 - 100</h1>
