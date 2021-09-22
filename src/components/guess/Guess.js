@@ -5,8 +5,6 @@ import GuessForm from './GuessForm';
 const Guess = (props) => {
   const dispatch = useDispatch();
 
-  console.log(props.guessError);
-
   const generateRandomNumber = () => {
     return Math.floor(Math.random() * 100 + 1);
   };
