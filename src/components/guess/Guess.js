@@ -45,10 +45,13 @@ const Guess = (props) => {
             `You won in ${props.userGuesses} guesses!`}
       </p>
       <p className='guess-result'>
-        {props.userGuesses > 0 && props.randomNumber < props.userGuessedNumber
+        {props.userGuesses > 0 &&
+        props.randomNumber < props.userGuessedNumber &&
+        !props.userGuessedCorrect
           ? 'Sorry, your guess was too high!'
           : props.userGuesses > 0 &&
-            props.randomNumber > props.userGuessedNumber
+            props.randomNumber > props.userGuessedNumber &&
+            !props.userGuessedCorrect
           ? 'Sorry, your guess was too low!'
           : null}
       </p>
