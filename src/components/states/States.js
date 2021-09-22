@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 const States = (props) => {
   const dispatch = useDispatch();
 
+  // Fetches data from JSON file and dispatched to state
+
   useEffect(() => {
     fetch('states.json')
       .then((response) => response.json())
@@ -14,9 +16,13 @@ const States = (props) => {
       .catch((error) => console.error(error));
   }, [dispatch]);
 
+  // Maps over array with nested arrays, and returns one array with data
+
   const statesData =
     props.states.length &&
     props.states.map((value) => Object.values(value)).flat();
+
+  // Maps over flattened array and returns links with state names
 
   const listOfStates =
     statesData.length &&
@@ -43,6 +49,8 @@ const States = (props) => {
     </div>
   );
 };
+
+// State from redux store
 
 const mapStateToProps = (state) => {
   return {

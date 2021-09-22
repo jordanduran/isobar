@@ -9,6 +9,9 @@ const Guess = (props) => {
     return Math.floor(Math.random() * 100 + 1);
   };
 
+  /* Function recieves the user input number and checks if matches the current 
+  random number and displays error if the input is not within 1 - 100 */
+
   const handleDetermineResult = (guessedNumber) => {
     dispatch({ type: 'USER_GUESSED_NUMBER', payload: guessedNumber });
 
@@ -24,6 +27,8 @@ const Guess = (props) => {
       };
     }
   };
+
+  // Dispatches a new random number on component mount or when if dispatched
 
   useEffect(() => {
     dispatch({ type: 'NEW_RANDOM_NUMBER', payload: generateRandomNumber() });
@@ -57,6 +62,8 @@ const Guess = (props) => {
     </div>
   );
 };
+
+// State from redux store
 
 const mapStateToProps = (state) => {
   return {

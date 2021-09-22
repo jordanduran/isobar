@@ -1,3 +1,5 @@
+// Initial State
+
 const initState = {
   randomNumber: 0,
   userGuessedNumber: null,
@@ -7,6 +9,8 @@ const initState = {
   states: [],
   selectedState: [],
 };
+
+// Reducer functions for Guess and State components
 
 const reducer = (state = initState, action) => {
   switch (action.type) {

@@ -9,6 +9,8 @@ const GuessForm = (props) => {
     setNum(e.target.value);
   };
 
+  // Function submits form and passes the input value to handleDetermineResult function in Guess comp
+
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch({ type: 'USER_GUESSES', payload: 1 });
@@ -40,6 +42,8 @@ const GuessForm = (props) => {
     </form>
   );
 };
+
+// State from redux store
 
 const mapStateToProps = (state) => {
   return {
