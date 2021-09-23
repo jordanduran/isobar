@@ -8,24 +8,22 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 const App = () => {
   return (
     <Router>
-      <div className='App'>
-        <Navbar />
-        <Switch>
-          <Route exact path='/'>
-            <LandingPage />
-          </Route>
-          <Route exact path='/states'>
-            <States />
-          </Route>
-          <Route path='/guess'>
-            <Guess />
-          </Route>
-          <Route path='/states/:name'>
-            <StateDetail />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+      <Navbar />
+      <Switch>
+        <Route exact path='/'>
+          <LandingPage />
+        </Route>
+        <Route exact path='/states'>
+          <States />
+        </Route>
+        <Route path='/guess'>
+          <Guess />
+        </Route>
+        <Route path='/states/:name'>
+          <StateDetail />
+        </Route>
+      </Switch>
+git    </Router>
   );
 };
 
