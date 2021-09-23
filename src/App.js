@@ -16,14 +16,14 @@ const App = () => {
         <Route exact path='/states'>
           <States />
         </Route>
-        <Route path='/guess'>
-          <Guess />
-        </Route>
         <Route path='/states/:name'>
           <StateDetail />
         </Route>
+        <Route path='/guess'>
+          <Guess />
+        </Route>
       </Switch>
-git    </Router>
+    </Router>
   );
 };
 
