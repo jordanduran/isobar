@@ -1,9 +1,9 @@
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import LandingPage from './components/LandingPage';
 import States from './components/states/States';
 import StateDetail from './components/states/StateDetail';
 import Guess from './components/guess/Guess';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const App = () => {
   return (
